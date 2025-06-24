@@ -1,0 +1,4 @@
+jupyter
+google-genai
+pypdf2
+chromadb
