@@ -1,0 +1,5 @@
+jupyter
+google-genai
+pytz
+mcp
+fastmcp
