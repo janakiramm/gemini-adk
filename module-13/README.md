@@ -12,7 +12,7 @@
 ## 1. Create a Secret in Google Secret Manager
 
 ``` bash
-echo $GOOGLE_API_KEY |     gcloud secrets create GOOGLE_API_KEY         --project=janakiramm-sandbox         --data-file=-
+echo $GOOGLE_API_KEY |     gcloud secrets create GOOGLE_API_KEY         --project=PROJECT_ID         --data-file=-
 ```
 
 ------------------------------------------------------------------------
@@ -20,7 +20,7 @@ echo $GOOGLE_API_KEY |     gcloud secrets create GOOGLE_API_KEY         --projec
 ## 2. Grant Access to the Compute Service Account
 
 ``` bash
-gcloud secrets add-iam-policy-binding GOOGLE_API_KEY     --member="serviceAccount:371682361949-compute@developer.gserviceaccount.com"     --role="roles/secretmanager.secretAccessor"     --project="janakiramm-sandbox"
+gcloud secrets add-iam-policy-binding GOOGLE_API_KEY     --member="COMPUTE_SERVICE_ACCOUNT"     --role="roles/secretmanager.secretAccessor"     --project="PROJECT_ID"
 ```
 
 ------------------------------------------------------------------------
@@ -28,7 +28,7 @@ gcloud secrets add-iam-policy-binding GOOGLE_API_KEY     --member="serviceAccoun
 ## 3. Set Required Environment Variables
 
 ``` bash
-export GOOGLE_CLOUD_PROJECT="janakiramm-sandbox"
+export GOOGLE_CLOUD_PROJECT="PROJECT_ID"
 export GOOGLE_CLOUD_LOCATION="us-central1"
 export AGENT_PATH="./weather_time"
 export SERVICE_NAME="weather-time"
