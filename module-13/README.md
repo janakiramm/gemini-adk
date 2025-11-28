@@ -2,9 +2,9 @@
 
 ## Prerequisites
 
--   Google Cloud SDK installed and authenticated\
--   `gcloud` CLI configured\
--   `adk` CLI installed\
+-   Google Cloud SDK installed and authenticated
+-   `gcloud` CLI configured
+-   `adk` CLI installed
 -   A valid **GOOGLE_API_KEY** environment variable exported
 
 ------------------------------------------------------------------------
@@ -12,7 +12,7 @@
 ## 1. Create a Secret in Google Secret Manager
 
 ``` bash
-echo $GOOGLE_API_KEY |     gcloud secrets create GOOGLE_API_KEY         --project=PROJECT_ID         --data-file=-
+echo $GOOGLE_API_KEY | gcloud secrets create GOOGLE_API_KEY --project=PROJECT_ID --data-file=-
 ```
 
 ------------------------------------------------------------------------
@@ -20,7 +20,7 @@ echo $GOOGLE_API_KEY |     gcloud secrets create GOOGLE_API_KEY         --projec
 ## 2. Grant Access to the Compute Service Account
 
 ``` bash
-gcloud secrets add-iam-policy-binding GOOGLE_API_KEY     --member="COMPUTE_SERVICE_ACCOUNT"     --role="roles/secretmanager.secretAccessor"     --project="PROJECT_ID"
+gcloud secrets add-iam-policy-binding GOOGLE_API_KEY --member="COMPUTE_SERVICE_ACCOUNT" --role="roles secretmanager.secretAccessor" --project="PROJECT_ID"
 ```
 
 ------------------------------------------------------------------------
